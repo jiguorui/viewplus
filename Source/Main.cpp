@@ -66,9 +66,10 @@ public:
                                         DocumentWindow::allButtons)
         {
             setContentOwned (new MainContentComponent(), true);
-
+			
             centreWithSize (getWidth(), getHeight());
 			setResizable(true, false);
+			setFullScreen(true);
             setVisible (true);
         }
 

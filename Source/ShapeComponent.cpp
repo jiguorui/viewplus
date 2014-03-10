@@ -7,8 +7,8 @@
 
   ==============================================================================
 */
-
 #include "ShapeComponent.h"
+
 ShapeComponent::ShapeComponent(SelectedItems *selectedItems) : BaseComponent(selectedItems)
 {
 	setSize(100, 100);
@@ -20,4 +20,10 @@ void ShapeComponent::paint(Graphics& g)
 {
 	g.setColour(Colours::black);
 	g.drawEllipse(1.0f, 1.0f, (float)getWidth() - 2, (float)getHeight() - 2, 1.0f);
+}
+
+void ShapeComponent::mouseDoubleClick(const MouseEvent& e)
+{
+//	ShapePropertyDialog dlg;
+//	dlg.Show();
 }

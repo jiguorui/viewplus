@@ -27,7 +27,8 @@ public:
     void paint (Graphics&);
     void resized() override;
 private:
-	ScopedPointer<MDIFrame> frame;
+	ScopedPointer<MDIFrame> mainFrame;
+	ScopedPointer<MDIFrame> rightFrame;
 	Toolbar toolBar;
 private:
 	void updateLayoutMode();

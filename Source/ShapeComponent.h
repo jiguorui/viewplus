@@ -20,6 +20,7 @@ public:
 	ShapeComponent(SelectedItems * selectedItems);
 	~ShapeComponent();
 	void paint(Graphics& g);
+	void mouseDoubleClick(const MouseEvent& e);
 private:
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ShapeComponent)
