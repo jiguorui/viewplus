@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<JUCERPROJECT id="hocZ6N" name="ViewPlus" projectType="guiapp" version="1.0.0"
+              bundleIdentifier="com.yourcompany.ViewPlus" includeBinaryInAppConfig="1"
+              jucerVersion="3.1.0">
+  <MAINGROUP id="KiZV0u" name="ViewPlus">
+    <GROUP id="{6C4D3E62-F4D3-B367-7FC6-A9A2C21791E7}" name="Source">
+      <FILE id="fTzrdY" name="RealTimeValue.cpp" compile="1" resource="0"
+            file="Source/RealTimeValue.cpp"/>
+      <FILE id="XrEb09" name="RealTimeValue.h" compile="0" resource="0" file="Source/RealTimeValue.h"/>
+      <FILE id="fOOW75" name="SelectedItems.cpp" compile="1" resource="0"
+            file="Source/SelectedItems.cpp"/>
+      <FILE id="hWnBtG" name="SelectedItems.h" compile="0" resource="0" file="Source/SelectedItems.h"/>
+      <FILE id="po3c88" name="BaseComponent.cpp" compile="1" resource="0"
+            file="Source/BaseComponent.cpp"/>
+      <FILE id="KYezns" name="BaseComponent.h" compile="0" resource="0" file="Source/BaseComponent.h"/>
+      <FILE id="hZK9aB" name="myToolbarItemFactory.cpp" compile="1" resource="0"
+            file="Source/myToolbarItemFactory.cpp"/>
+      <FILE id="gJgxKG" name="myToolbarItemFactory.h" compile="0" resource="0"
+            file="Source/myToolbarItemFactory.h"/>
+      <FILE id="nHALpF" name="BarChart.cpp" compile="1" resource="0" file="Source/BarChart.cpp"/>
+      <FILE id="CopRHQ" name="BarChart.h" compile="0" resource="0" file="Source/BarChart.h"/>
+      <FILE id="UQsTzC" name="MeasurePoint.cpp" compile="1" resource="0"
+            file="Source/MeasurePoint.cpp"/>
+      <FILE id="qBbMeg" name="MeasurePoint.h" compile="0" resource="0" file="Source/MeasurePoint.h"/>
+      <FILE id="C8UdNr" name="MeterChart.cpp" compile="1" resource="0" file="Source/MeterChart.cpp"/>
+      <FILE id="aXzdfh" name="MeterChart.h" compile="0" resource="0" file="Source/MeterChart.h"/>
+      <FILE id="FhdXbY" name="DocumentView.cpp" compile="1" resource="0"
+            file="Source/DocumentView.cpp"/>
+      <FILE id="yE9K3B" name="DocumentView.h" compile="0" resource="0" file="Source/DocumentView.h"/>
+      <FILE id="ftc1iT" name="MDIFrame.cpp" compile="1" resource="0" file="Source/MDIFrame.cpp"/>
+      <FILE id="XoXFQR" name="MDIFrame.h" compile="0" resource="0" file="Source/MDIFrame.h"/>
+      <FILE id="xEx9Un" name="MainComponent.cpp" compile="1" resource="0"
+            file="Source/MainComponent.cpp"/>
+      <FILE id="S8Hzvh" name="MainComponent.h" compile="0" resource="0" file="Source/MainComponent.h"/>
+      <FILE id="tBcC6a" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
+    </GROUP>
+  </MAINGROUP>
+  <EXPORTFORMATS>
+    <VS2010 targetFolder="Builds/VisualStudio2010">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="ViewPlus"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="ViewPlus"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_core" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_video" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="D:/juce/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2010>
+    <VS2012 targetFolder="Builds/VisualStudio2012">
+      <CONFIGURATIONS>
+        <CONFIGURATION name="Debug" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="1" optimisation="1" targetName="ViewPlus"/>
+        <CONFIGURATION name="Release" winWarningLevel="4" generateManifest="1" winArchitecture="32-bit"
+                       isDebug="0" optimisation="2" targetName="ViewPlus"/>
+      </CONFIGURATIONS>
+      <MODULEPATHS>
+        <MODULEPATH id="juce_video" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_opengl" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_extra" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_gui_basics" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_graphics" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_events" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_data_structures" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_cryptography" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_core" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_processors" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_formats" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_devices" path="D:/juce/JUCE/modules"/>
+        <MODULEPATH id="juce_audio_basics" path="D:/juce/JUCE/modules"/>
+      </MODULEPATHS>
+    </VS2012>
+  </EXPORTFORMATS>
+  <MODULES>
+    <MODULES id="juce_audio_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_audio_devices" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_audio_formats" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_audio_processors" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_core" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_cryptography" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_data_structures" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_events" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_graphics" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_gui_basics" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_gui_extra" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_opengl" showAllCode="1" useLocalCopy="1"/>
+    <MODULES id="juce_video" showAllCode="1" useLocalCopy="1"/>
+  </MODULES>
+  <JUCEOPTIONS/>
+</JUCERPROJECT>
