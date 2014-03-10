@@ -5,6 +5,14 @@
               jucerVersion="3.1.0">
   <MAINGROUP id="KiZV0u" name="ViewPlus">
     <GROUP id="{6C4D3E62-F4D3-B367-7FC6-A9A2C21791E7}" name="Source">
+      <FILE id="gbeEHU" name="ShapePropertyDialog.cpp" compile="1" resource="0"
+            file="Source/ShapePropertyDialog.cpp"/>
+      <FILE id="SS6TVH" name="ShapePropertyDialog.h" compile="0" resource="0"
+            file="Source/ShapePropertyDialog.h"/>
+      <FILE id="rIdNs1" name="ShapeComponent.cpp" compile="1" resource="0"
+            file="Source/ShapeComponent.cpp"/>
+      <FILE id="dwl41I" name="ShapeComponent.h" compile="0" resource="0"
+            file="Source/ShapeComponent.h"/>
       <FILE id="fTzrdY" name="RealTimeValue.cpp" compile="1" resource="0"
             file="Source/RealTimeValue.cpp"/>
       <FILE id="XrEb09" name="RealTimeValue.h" compile="0" resource="0" file="Source/RealTimeValue.h"/>

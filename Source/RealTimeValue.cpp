@@ -7,5 +7,16 @@
 
   ==============================================================================
 */
-
 #include "RealTimeValue.h"
+RealTimeValue::RealTimeValue(SelectedItems* selectedItems) : BaseComponent(selectedItems)
+{
+	setSize(120, 50);
+}
+RealTimeValue::~RealTimeValue()
+{
+}
+void RealTimeValue::paint(Graphics& g)
+{
+	g.setColour(Colours::black);
+	g.drawText(String(getValue(), 2), getLocalBounds(), Justification::centred, false);
+}

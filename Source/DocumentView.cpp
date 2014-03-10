@@ -12,6 +12,9 @@
 #include "BaseComponent.h"
 #include "MeterChart.h"
 #include "BarChart.h"
+#include "RealTimeValue.h"
+#include "ShapeComponent.h"
+
 DocumentView::DocumentView():FileBasedDocument (".jnote", "*.jnote",
                              "Browse for note to load",
 							 "Choose file to save note to")
@@ -26,6 +29,15 @@ DocumentView::DocumentView():FileBasedDocument (".jnote", "*.jnote",
 	compArray.add(c);
 	selectedItemSet.addChangeListener((ChangeListener*)c);
 	addAndMakeVisible(c);
+	c = new RealTimeValue(&selectedItemSet);
+	compArray.add(c);
+	selectedItemSet.addChangeListener((ChangeListener*)c);
+	addAndMakeVisible(c);
+	c = new ShapeComponent(&selectedItemSet);
+	compArray.add(c);
+	selectedItemSet.addChangeListener((ChangeListener*)c);
+	addAndMakeVisible(c);
+
 }
 void DocumentView::mouseDown(const MouseEvent& e)
 {

@@ -1,29 +1,29 @@
 /*
   ==============================================================================
 
-    RealTimeValue.h
-    Created: 10 Mar 2014 12:30:03pm
+    ShapeComponent.h
+    Created: 10 Mar 2014 1:02:19pm
     Author:  jiguo_000
 
   ==============================================================================
 */
 
-#ifndef REALTIMEVALUE_H_INCLUDED
-#define REALTIMEVALUE_H_INCLUDED
+#ifndef SHAPECOMPONENT_H_INCLUDED
+#define SHAPECOMPONENT_H_INCLUDED
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MeasurePoint.h"
 #include "BaseComponent.h"
 
-class RealTimeValue : public BaseComponent, public MeasurePoint
+class ShapeComponent : public BaseComponent, public MeasurePoint
 {
 public:
-	RealTimeValue(SelectedItems* selectedItems);
-	~RealTimeValue();
-	void paint(Graphics& g) override;
+	ShapeComponent(SelectedItems * selectedItems);
+	~ShapeComponent();
+	void paint(Graphics& g);
 private:
 	//==============================================================================
-	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RealTimeValue)
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ShapeComponent)
 
 };
 
-#endif  // REALTIMEVALUE_H_INCLUDED
+#endif  // SHAPECOMPONENT_H_INCLUDED
