@@ -17,6 +17,7 @@ class MDIFrame    : public MultiDocumentPanel
 public:
     MDIFrame()
     {
+		setSize(200, 100);
     }
 
     ~MDIFrame()

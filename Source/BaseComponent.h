@@ -13,6 +13,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "SelectedItems.h"
+#include "PropertySet.h"
 
 class BaseComponent : public Component, public ChangeListener
 {
@@ -96,6 +97,7 @@ private:
 	SelectedItems *selectedItemSet;
 	ComponentDragger dragger;
 	ScopedPointer<ResizableBorderComponent> resizeBorder;
+	
 private:
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BaseComponent)

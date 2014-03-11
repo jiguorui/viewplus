@@ -17,28 +17,23 @@
 MainContentComponent::MainContentComponent()
 {
     setSize (500, 400);
-	//addAndMakeVisible(toolBar);
-	/*
-	toolBar.setBoundsRelative(0.0f, 0.0f, 0.2f, 1.0f);
-	toolBar.setVertical(true);
-	toolBar.setColour(Toolbar::ColourIds::backgroundColourId, Colours::grey);*/
+
+	spliteBar = new StretchableLayoutResizerBar(&mainLayout, 1, true);
+	//spliteBar->setSize(8,100);
+	addAndMakeVisible(spliteBar);
 	mainFrame = new MDIFrame();
 	addAndMakeVisible(mainFrame);
 	mainFrame->setBackgroundColour (Colours::transparentBlack);
 	mainFrame->addDocument(new DocumentView(), Colours::white, true);
-	updateLayoutMode();
 
 	rightFrame = new MDIFrame();
 	addAndMakeVisible(rightFrame);
 	rightFrame->setBackgroundColour (Colours::transparentBlack);
-	rightFrame->addDocument(new PropertyPage(), Colours::lightgrey, true);
+	rightFrame->addDocument(new PropertyPage(), Colours::whitesmoke, true);
+	mainLayout.setItemLayout (0, -0.2, -0.85,-0.85); 
+	mainLayout.setItemLayout (1, 8, 8, 8);
+	mainLayout.setItemLayout (2,-0.1, -0.8,-0.13); 
 
-	Rectangle<int> area = getLocalBounds();
-	area.setWidth(getWidth() * 0.76f);
-	mainFrame->setBounds (area);
-	area.setWidth(getWidth() * 0.23f);
-	area.translate(getWidth() * 0.77f, 0);
-	rightFrame->setBounds(area);
 }
 
 MainContentComponent::~MainContentComponent()
@@ -47,28 +42,16 @@ MainContentComponent::~MainContentComponent()
 
 void MainContentComponent::paint (Graphics& g)
 {
-	g.fillAll(Colours::whitesmoke);
+	g.fillAll(Colours::lightblue);
 }
 
 void MainContentComponent::resized() 
 {
-	if(mainFrame)	
-	{
-		Rectangle<int> area = getLocalBounds();
-		area.setWidth(getWidth() * 0.76f);
-		mainFrame->setBounds (area);
-	}
-	if(rightFrame)
-	{
-		Rectangle<int> area = getLocalBounds();
-		area.setWidth(getWidth() * 0.24f - 3);
-		area.translate(getWidth() * 0.76f + 3, 0);
-		rightFrame->setBounds(area);
-	}
-	//toolBar.setBoundsRelative(0.0f, 0.0f, 0.2f, 1.0f);
+	Component* comps[] = { mainFrame, spliteBar, rightFrame };
+	mainLayout.layOutComponents (comps, 3, 0, 0, getWidth(), getHeight(),false,true);
 }
 
 void MainContentComponent::updateLayoutMode()
 {
-	mainFrame->setLayoutMode(MultiDocumentPanel::MaximisedWindowsWithTabs);
+	if(mainFrame) mainFrame->setLayoutMode(MultiDocumentPanel::FloatingWindows);
 }

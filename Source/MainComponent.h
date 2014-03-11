@@ -30,6 +30,9 @@ private:
 	ScopedPointer<MDIFrame> mainFrame;
 	ScopedPointer<MDIFrame> rightFrame;
 	Toolbar toolBar;
+	StretchableLayoutManager mainLayout;
+	ScopedPointer<StretchableLayoutResizerBar> spliteBar;
+	
 private:
 	void updateLayoutMode();
 private:

@@ -5,6 +5,8 @@
               jucerVersion="3.1.0">
   <MAINGROUP id="KiZV0u" name="ViewPlus">
     <GROUP id="{6C4D3E62-F4D3-B367-7FC6-A9A2C21791E7}" name="Source">
+      <FILE id="jZNBNx" name="PropertySet.cpp" compile="1" resource="0" file="Source/PropertySet.cpp"/>
+      <FILE id="W37J5c" name="PropertySet.h" compile="0" resource="0" file="Source/PropertySet.h"/>
       <FILE id="gbeEHU" name="PropertyPage.cpp" compile="1" resource="0"
             file="Source/PropertyPage.cpp"/>
       <FILE id="SS6TVH" name="PropertyPage.h" compile="0" resource="0" file="Source/PropertyPage.h"/>
