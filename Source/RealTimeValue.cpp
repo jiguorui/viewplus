@@ -23,7 +23,7 @@ void RealTimeValue::paint(Graphics& g)
 	g.setFont(fontSize);
 	g.drawText(String(getValue(), 2), getLocalBounds(), Justification::centred, false);
 }
-
+/*
 void RealTimeValue::setPropertyPage(PropertyPage *pg)
 {
 	pg->propertyNames.add(new String("Font size"));
@@ -43,4 +43,4 @@ void RealTimeValue::setProperties(StringArray strs)
 	fontSize = strs[0].getIntValue();
 	fontColour = strs[1].getHexValue32();
 	repaint();
-}
+}*/

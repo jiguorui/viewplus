@@ -23,7 +23,7 @@ void ShapeComponent::paint(Graphics& g)
 	g.setColour(Colour(borderColour));
 	g.drawEllipse((float)borderThickness, (float)borderThickness, (float)getWidth() - 2 * (float)borderThickness, (float)getHeight() - 2 * (float)borderThickness, (float)borderThickness);
 }
-
+/*
 void ShapeComponent::setPropertyPage(PropertyPage *pg)
 {
 	pg->propertyNames.add(new String("borderThickness"));
@@ -45,4 +45,4 @@ void ShapeComponent::setProperties(StringArray strs)
 	borderThickness = strs[0].getIntValue();
 	borderColour = strs[1].getHexValue32();
 	repaint();
-}
+}*/

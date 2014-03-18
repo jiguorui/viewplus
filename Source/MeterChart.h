@@ -14,17 +14,17 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "MeasurePoint.h"
 #include "BaseComponent.h"
-
+class DocumentView;
 class MeterChart : public BaseComponent, public MeasurePoint, private Timer
 {
 public:
-	MeterChart(SelectedItems* selectedItems);
+	MeterChart(DocumentView* doc);
 	~MeterChart();
 	
 	void paint (Graphics&) override;
 	//void resized();
-	void setPropertyPage(PropertyPage *);
-	void setProperties(StringArray strs);
+//	void setPropertyPage(PropertyPage *);
+//	void setProperties(StringArray strs);
 protected:
 	void visibilityChanged() override;
 	/*

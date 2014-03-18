@@ -14,7 +14,7 @@ PropertyPage::PropertyPage(BaseComponent * c)
 	setSize(300, 600);
 	setLookAndFeel(lookAndFeel = new LookAndFeel_V3());
 	componentToEdit = c;
-	c->setPropertyPage(this);
+//	c->setPropertyPage(this);
 	numRows = propertyNames.size();
 	tableListBox = new TableListBox("table", this);
 	tableListBox->getHeader().addColumn("Name", 1, 150, 30, 200);
@@ -87,7 +87,7 @@ void PropertyPage::buttonClicked(Button * /*button*/)
 		strs.add(s);
 	}
 
-	componentToEdit->setProperties(strs);
+//	componentToEdit->setProperties(strs);
 	DialogWindow* dw = findParentComponentOfClass<DialogWindow>();
 	if (dw != nullptr)
 		dw->exitModalState (0);

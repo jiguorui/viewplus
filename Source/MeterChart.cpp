@@ -13,7 +13,7 @@
 
 #define MATH_PI 3.1415926f
 #define ZRAD(rad) (rad)-MATH_PI/4*3
-MeterChart::MeterChart(SelectedItems *selectedItems) : BaseComponent(selectedItems)
+MeterChart::MeterChart(DocumentView *doc) : BaseComponent(doc)
 {
 	setSize(200, 200);
 	setValue(0.5f);
@@ -129,7 +129,7 @@ void MeterChart::timerCallback()
 {
 	repaint();
 }
-
+/*
 void MeterChart::setPropertyPage(PropertyPage *pg)
 {
 	pg->propertyNames.add(new String("segLineColour"));
@@ -143,3 +143,4 @@ void MeterChart::setProperties(StringArray strs)
 {
 	segLineColour = strs[0].getHexValue32();
 }
+*/

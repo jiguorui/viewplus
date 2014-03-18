@@ -9,7 +9,18 @@ Author:  Ji-Guorui,jiguorui@gmail.com
 */
 
 #include "BarChart.h"
-//#include "ComponentUtils.h"
+BarChart::BarChart(DocumentView *doc) : BaseComponent(doc)
+{
+	isVertical = true;
+
+	borderThickness = 1.0f;
+	setSize(80, 130);
+	setColour(BarChart::ColourIds::backgroundColourId, Colour(0xfff3f3f3));
+	setColour(BarChart::ColourIds::foregroundColourId, Colours::green);
+	setColour(BarChart::ColourIds::borderColourId, Colours::grey);
+	setValue(0.5f);
+
+}
 BarChart::BarChart(SelectedItems* selectedItems, float from, float to, bool vertical) : BaseComponent(selectedItems)
 {
 	isVertical = vertical;

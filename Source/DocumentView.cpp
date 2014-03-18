@@ -22,7 +22,16 @@ DocumentView::DocumentView():FileBasedDocument (".jnote", "*.jnote",
 	setSize(500, 250);
 	setName("child");
 	setLookAndFeel(lookAndFeel = new LookAndFeel_V3());
+	BaseComponent * c = new MeterChart(this);
+	compArray.add(c);
+	//addChangeListener((ChangeListener*)c);
+	addAndMakeVisible(c);
+	c = new BarChart(this);
+	compArray.add(c);
+	//selectedItemSet.addChangeListener((ChangeListener*)c);
+	addAndMakeVisible(c);
 
+/*
 	BaseComponent * c = new MeterChart(&selectedItemSet);
 	compArray.add(c);
 	selectedItemSet.addChangeListener((ChangeListener*)c);
@@ -38,12 +47,25 @@ DocumentView::DocumentView():FileBasedDocument (".jnote", "*.jnote",
 	c = new ShapeComponent(&selectedItemSet);
 	compArray.add(c);
 	selectedItemSet.addChangeListener((ChangeListener*)c);
-	addAndMakeVisible(c);
+	addAndMakeVisible(c);*/
 
 }
 void DocumentView::mouseDown(const MouseEvent& e)
 {
-	selectedItemSet.deselectAll();
+	deselectAll();
+}
+
+void DocumentView::multiSelectedMove(BaseComponent * dragedComponent, int dx, int dy)
+{
+	int cnt = getNumSelected();
+	for(int i = 0; i < cnt; i++)
+	{
+		BaseComponent *c = getSelectedItem(i);
+		if(dragedComponent != c)
+		{
+			c->multiSelectedMove(dx, dy);
+		}
+	}
 }
 DocumentView::~DocumentView()
 {
@@ -61,6 +83,7 @@ void DocumentView::resized()
 
 void DocumentView::mouseDoubleClick(const MouseEvent& /*e*/)
 {
+	/*
 	Array<PropertyComponent *> pps; 
 	PropertyPanel *pp = new PropertyPanel();
 	String str = "back";
@@ -75,5 +98,5 @@ void DocumentView::mouseDoubleClick(const MouseEvent& /*e*/)
 	dlg->showModalDialog("property", pp, getParentComponent(), Colours::lightgrey, false); 
 		delete pp;
 		delete dlg;
-
+*/
 }

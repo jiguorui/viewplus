@@ -20,8 +20,8 @@ public:
 	RealTimeValue(SelectedItems* selectedItems);
 	~RealTimeValue();
 	void paint(Graphics& g) override;
-	void setPropertyPage(PropertyPage *);
-	void setProperties(StringArray strs);
+//	void setPropertyPage(PropertyPage *);
+//	void setProperties(StringArray strs);
 private:
 	int fontSize;
 	int fontColour;

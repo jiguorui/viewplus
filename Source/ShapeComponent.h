@@ -21,8 +21,8 @@ public:
 	~ShapeComponent();
 	void paint(Graphics& g);
 
-	void setPropertyPage(PropertyPage *);
-	void setProperties(StringArray strs);
+//	void setPropertyPage(PropertyPage *);
+//	void setProperties(StringArray strs);
 private:
 	int borderThickness;
 	int borderColour;

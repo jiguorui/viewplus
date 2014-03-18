@@ -11,9 +11,9 @@
 #ifndef VIEWDOC_H_INCLUDED
 #define VIEWDOC_H_INCLUDED
 #include "../JuceLibraryCode/JuceHeader.h"
-#include "SelectedItems.h"
+#include "SelectedComponentSet.h"
 
-class DocumentView: public Component, public FileBasedDocument
+class DocumentView: public Component, public FileBasedDocument, public SelectedComponentSet
 {
 public:
 	DocumentView();
@@ -22,6 +22,8 @@ public:
     void resized();
 
 	void mouseDown(const MouseEvent& e);
+
+    void multiSelectedMove(BaseComponent * dragedComponent, int dx, int dy);
 
 	String getDocumentTitle() override
     {
@@ -58,11 +60,11 @@ public:
 
 	void mouseDoubleClick(const MouseEvent& e);
 
-	static SelectedItems & getSelectedItemSet(Component * c) { return ((DocumentView*) c)->selectedItemSet;}
+//	static SelectedItems & getSelectedItemSet(Component * c) { return ((DocumentView*) c)->selectedItemSet;}
 
 private:
 	OwnedArray<BaseComponent> compArray;
-	SelectedItems selectedItemSet;
+	//SelectedItems selectedItemSet;
 	ScopedPointer<LookAndFeel> 	lookAndFeel;
 
 private:

@@ -17,9 +17,10 @@
       <FILE id="fTzrdY" name="RealTimeValue.cpp" compile="1" resource="0"
             file="Source/RealTimeValue.cpp"/>
       <FILE id="XrEb09" name="RealTimeValue.h" compile="0" resource="0" file="Source/RealTimeValue.h"/>
-      <FILE id="fOOW75" name="SelectedItems.cpp" compile="1" resource="0"
-            file="Source/SelectedItems.cpp"/>
-      <FILE id="hWnBtG" name="SelectedItems.h" compile="0" resource="0" file="Source/SelectedItems.h"/>
+      <FILE id="fOOW75" name="SelectedComponentSet.cpp" compile="1" resource="0"
+            file="Source/SelectedComponentSet.cpp"/>
+      <FILE id="hWnBtG" name="SelectedComponentSet.h" compile="0" resource="0"
+            file="Source/SelectedComponentSet.h"/>
       <FILE id="po3c88" name="BaseComponent.cpp" compile="1" resource="0"
             file="Source/BaseComponent.cpp"/>
       <FILE id="KYezns" name="BaseComponent.h" compile="0" resource="0" file="Source/BaseComponent.h"/>

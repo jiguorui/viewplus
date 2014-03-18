@@ -17,6 +17,7 @@
 class BarChart : public BaseComponent, public MeasurePoint, private Timer 
 {
 public:
+	BarChart(DocumentView *doc);
 	BarChart(SelectedItems* selectedItems);
 	BarChart(SelectedItems* selectedItems, float from, float to, bool vertical);
 	~BarChart();
@@ -34,8 +35,8 @@ public:
         foregroundColourId              = 0x2001a00,    
 		borderColourId                  = 0x2001b00,
     };
-	void setPropertyPage(PropertyPage *) {}
-	void setProperties(StringArray strs){}
+//	void setPropertyPage(PropertyPage *) {}
+//	void setProperties(StringArray strs){}
 private:
 	bool isVertical;
 	float borderThickness;
