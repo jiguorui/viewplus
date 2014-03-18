@@ -56,11 +56,15 @@ public:
         // not interested in this for now
     }
 
+	void mouseDoubleClick(const MouseEvent& e);
+
 	static SelectedItems & getSelectedItemSet(Component * c) { return ((DocumentView*) c)->selectedItemSet;}
 
 private:
 	OwnedArray<BaseComponent> compArray;
 	SelectedItems selectedItemSet;
+	ScopedPointer<LookAndFeel> 	lookAndFeel;
+
 private:
     //==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DocumentView)

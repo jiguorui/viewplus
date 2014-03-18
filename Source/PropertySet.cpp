@@ -7,7 +7,7 @@
 
   ==============================================================================
 */
-
+#if 0
 #include "PropertySet.h"
 cPropertySet::cPropertySet()
 {
@@ -18,20 +18,20 @@ cPropertySet::~cPropertySet()
 }
 void cPropertySet::addProperty(String name, enum Propertype tt, void *p)
 {
-	Property * pr = new Property();
-	pr->name = name;
-	pr->t = tt;
-	pr->datap = p;
-	properties.add(pr);
-	numProperties ++;
+//	Property  *pr = new Property();
+//	pr->name = name;
+//	pr->t = tt;
+//	pr->datap = p;
+	//properties.add(pr);
+	//numProperties ++;
 }
 void cPropertySet::setPropertyValue(int index, String sval)
 {
 	jassert(index >= numProperties);
 	Property * pr = properties[index];
-	switch(pr->t)
+	//switch(pr->t)
 	{
-	case str:
+/*	case str:
 		*((String *)(pr->datap)) = sval;
 		break;
 	case i:
@@ -42,10 +42,11 @@ void cPropertySet::setPropertyValue(int index, String sval)
 		break;
 	case f:
 		*((float *)(pr->datap)) = sval.getFloatValue();
-		break;
+		break;*/
 	}
 }
 int cPropertySet::getNumProperties()
 {
 	return numProperties;
 }
+#endif

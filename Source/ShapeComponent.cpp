@@ -12,18 +12,37 @@
 ShapeComponent::ShapeComponent(SelectedItems *selectedItems) : BaseComponent(selectedItems)
 {
 	setSize(100, 100);
+	borderThickness = 2;
+	borderColour = 0xffff00ff;
 }
 ShapeComponent::~ShapeComponent()
 {
 }
 void ShapeComponent::paint(Graphics& g)
 {
-	g.setColour(Colours::black);
-	g.drawEllipse(1.0f, 1.0f, (float)getWidth() - 2, (float)getHeight() - 2, 1.0f);
+	g.setColour(Colour(borderColour));
+	g.drawEllipse((float)borderThickness, (float)borderThickness, (float)getWidth() - 2 * (float)borderThickness, (float)getHeight() - 2 * (float)borderThickness, (float)borderThickness);
 }
 
-void ShapeComponent::mouseDoubleClick(const MouseEvent& e)
+void ShapeComponent::setPropertyPage(PropertyPage *pg)
 {
-//	ShapePropertyDialog dlg;
-//	dlg.Show();
+	pg->propertyNames.add(new String("borderThickness"));
+	pg->propertyNames.add(new String("borderColour"));
+	TextEditor *textEditor = new TextEditor();
+	textEditor->setText(String(borderThickness));
+	Component ** c = new Component*();
+	*c = textEditor;
+	pg->propertyComps.add((Component **)c);
+	textEditor = new TextEditor();
+	textEditor->setText(String::toHexString(borderColour));
+	c = new Component*();
+	*c = textEditor;
+	pg->propertyComps.add((Component **)c);
+}
+
+void ShapeComponent::setProperties(StringArray strs)
+{
+	borderThickness = strs[0].getIntValue();
+	borderColour = strs[1].getHexValue32();
+	repaint();
 }

@@ -21,6 +21,8 @@ DocumentView::DocumentView():FileBasedDocument (".jnote", "*.jnote",
 {
 	setSize(500, 250);
 	setName("child");
+	setLookAndFeel(lookAndFeel = new LookAndFeel_V3());
+
 	BaseComponent * c = new MeterChart(&selectedItemSet);
 	compArray.add(c);
 	selectedItemSet.addChangeListener((ChangeListener*)c);
@@ -49,8 +51,29 @@ DocumentView::~DocumentView()
 
 void DocumentView::paint(Graphics& g)
 {
+	g.setColour(Colour(0xff4a4a4a));
+	g.fillAll();
 }
 
 void DocumentView::resized()
 {
+}
+
+void DocumentView::mouseDoubleClick(const MouseEvent& /*e*/)
+{
+	Array<PropertyComponent *> pps; 
+	PropertyPanel *pp = new PropertyPanel();
+	String str = "back";
+	Value v;
+	
+	TextPropertyComponent * tpc = new TextPropertyComponent(v, str, 10, false);
+	pps.add(tpc);
+	pp->addProperties(pps);
+	pp->setSize(200,100);
+	//pp->add
+	DialogWindow *dlg = new DialogWindow("dlg", Colours::lightgrey, true, false);
+	dlg->showModalDialog("property", pp, getParentComponent(), Colours::lightgrey, false); 
+		delete pp;
+		delete dlg;
+
 }

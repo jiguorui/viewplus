@@ -20,7 +20,11 @@ public:
 	RealTimeValue(SelectedItems* selectedItems);
 	~RealTimeValue();
 	void paint(Graphics& g) override;
+	void setPropertyPage(PropertyPage *);
+	void setProperties(StringArray strs);
 private:
+	int fontSize;
+	int fontColour;
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RealTimeValue)
 

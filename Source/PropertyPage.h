@@ -12,12 +12,57 @@
 #define SHAPEPROPERTYDIALOG_H_INCLUDED
 #include "../JuceLibraryCode/JuceHeader.h"
 class BaseComponent;
+class PropertyPage : public Component, public TableListBoxModel, private Button::Listener
+{
+public:
+	PropertyPage(BaseComponent* component);
+	~PropertyPage();
+	void resized() override;
+	int getNumRows() override;
+	void paintRowBackground (Graphics& g, int rowNumber,int width, int height,bool rowIsSelected) override;
+	void paintCell (Graphics& g, int rowNumber,int columnId,int width, int height,bool rowIsSelected) override;
+	Component* refreshComponentForCell (int rowNumber, int columnId, bool /*isRowSelected*/,
+                                        Component* existingComponentToUpdate) override;
+	OwnedArray<String> propertyNames;
+	OwnedArray<Component *> propertyComps;
+private:
+	ScopedPointer<TableListBox> tableListBox;
+	ScopedPointer<TextButton> applyButton;
+	int numRows;
+	BaseComponent* componentToEdit;
+	ScopedPointer<LookAndFeel> lookAndFeel;
+
+	void buttonClicked(Button * button) override;
+private:
+	//==============================================================================
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PropertyPage)
+};
+#if 0
+class PropertyEditor : public TextEditor
+{
+public:
+	PropertyEditor(cPropertySet * s, int indx)
+	{
+		set = s;
+		index = indx;
+	}
+	~PropertyEditor(){}
+	void focusLost(FocusChangeType t) override
+	{
+		TextEditor::focusLost(t);
+		if(set) set->setPropertyValue(index, getText());
+	}
+
+private:
+	cPropertySet *set;
+	int index;
+};
+
 class PropertyPage : public Component, public TableListBoxModel
 {
 public:
 	PropertyPage();
 	~PropertyPage();
-	void setBaseComponentToEdit(BaseComponent *){}
 	int getNumRows() override {return numRows;}
 	void paintRowBackground (Graphics& g,
                                      int rowNumber,
@@ -31,11 +76,13 @@ public:
                             int width, int height,
 							bool rowIsSelected) override
 	{
+		if(columnId == 1)
+		{
 		g.setColour(Colours::black);
 		g.drawText("test", 2, 0, width-4, height, Justification::centred, true);
 		g.setColour (Colours::black.withAlpha (0.2f));
         g.fillRect (width - 1, 0, 1, height);
-
+		}
 	}
 	void resized() override
 	{
@@ -46,10 +93,11 @@ public:
     {
 		if(columnId == 2)
 		{
-			TextEditor * c;
-			c = (TextEditor *)existingComponentToUpdate;
+			PropertyEditor * c;
+			c = (PropertyEditor *)existingComponentToUpdate;
 			if(c == nullptr)
-				c = new TextEditor();
+				c = new PropertyEditor(propertySet, rowNumber);
+			
 			return c;
 		}
 		else
@@ -62,12 +110,10 @@ public:
 private:
 	int numRows;
 	ScopedPointer<TableListBox> propertiesTable;
+	cPropertySet * propertySet;
 private:
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (PropertyPage)
 };
-
-
-
-
+#endif
 #endif  // SHAPEPROPERTYDIALOG_H_INCLUDED

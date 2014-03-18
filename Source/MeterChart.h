@@ -23,7 +23,8 @@ public:
 	
 	void paint (Graphics&) override;
 	//void resized();
-
+	void setPropertyPage(PropertyPage *);
+	void setProperties(StringArray strs);
 protected:
 	void visibilityChanged() override;
 	/*
@@ -37,6 +38,7 @@ protected:
 		dragger.dragComponent(this, e, nullptr);
 	}*/
 private:
+	int segLineColour;
 	//void drawPanel(Graphics &, int , int);
 	void getRLine(float x, float y, float rad, float r1, float r2, Line<float> &line); 
 	void getRPos(float x, float y, float rad, float r, Point<float> &pos);

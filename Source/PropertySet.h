@@ -10,6 +10,20 @@
 
 #ifndef PROPERTY_SET_H_INCLUDED
 #define PROPERTY_SET_H_INCLUDED
+#if 0
+#include "../JuceLibraryCode/JuceHeader.h"
+
+struct ComponentProperty
+{
+	String name;
+	enum Propertype
+	{
+		str,
+		colour,
+		i
+	} t;
+
+};
 #include "../JuceLibraryCode/JuceHeader.h"
 enum Propertype
 {
@@ -18,11 +32,18 @@ enum Propertype
 	ui,
 	f
 };
-struct Property
+class Property
 {
-	String name;
+public:
+	Property(){}
+	~Property(){}
+private:
+		String name;
 	enum Propertype t;
 	void * datap;
+
+	//==============================================================================
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (Property)
 };
 class cPropertySet
 {
@@ -34,13 +55,13 @@ public:
 	int getNumProperties();
 private:
 	int numProperties;
-	OwnedArray<struct Property> properties;
+	OwnedArray<Property> properties;
 private:
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (cPropertySet)
 };
 
-#if 0
+
 class ComponentProperty
 {
 public:

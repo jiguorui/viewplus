@@ -70,7 +70,7 @@ public:
             centreWithSize (getWidth(), getHeight());
 			setResizable(true, false);
 			setFullScreen(true);
-            setVisible (true);
+			setVisible (true);
         }
 
         void closeButtonPressed()

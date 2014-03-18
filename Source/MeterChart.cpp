@@ -17,7 +17,7 @@ MeterChart::MeterChart(SelectedItems *selectedItems) : BaseComponent(selectedIte
 {
 	setSize(200, 200);
 	setValue(0.5f);
-	
+	segLineColour = 0xff00ff00;
 	//resizer->setCentrePosition(195, 195);
 }
 MeterChart::~MeterChart()
@@ -53,7 +53,8 @@ void MeterChart::paint(Graphics &g)
 		getRLine(x1, y1, rad, R - 14, R - 10, lineTmp);
 		path.addLineSegment(lineTmp, 0.5f);
 	}
-	g.setColour(Colours::dodgerblue);
+	//g.setColour(Colours::dodgerblue);
+	g.setColour(Colour(segLineColour));
 	PathStrokeType pst(2.0f);
 	g.strokePath(path,pst);
 
@@ -127,4 +128,18 @@ void MeterChart::visibilityChanged()
 void MeterChart::timerCallback()
 {
 	repaint();
+}
+
+void MeterChart::setPropertyPage(PropertyPage *pg)
+{
+	pg->propertyNames.add(new String("segLineColour"));
+	Component **c = new Component*();
+	*c = new TextEditor();
+	((TextEditor*)*c)->setText(String::toHexString(segLineColour));
+	pg->propertyComps.add(c);
+}
+
+void MeterChart::setProperties(StringArray strs)
+{
+	segLineColour = strs[0].getHexValue32();
 }

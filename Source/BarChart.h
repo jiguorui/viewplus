@@ -34,7 +34,8 @@ public:
         foregroundColourId              = 0x2001a00,    
 		borderColourId                  = 0x2001b00,
     };
-
+	void setPropertyPage(PropertyPage *) {}
+	void setProperties(StringArray strs){}
 private:
 	bool isVertical;
 	float borderThickness;
