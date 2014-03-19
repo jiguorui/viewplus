@@ -11,7 +11,7 @@
 
 #include "../JuceLibraryCode/JuceHeader.h"
 class MDIFrame;
-
+class ComponentSettings;
 //==============================================================================
 /*
     This component lives inside our window, and this is where you should put all
@@ -26,12 +26,15 @@ public:
 
     void paint (Graphics&);
     void resized() override;
+	PropertyPanel * getPropertyPanel();
 private:
 	ScopedPointer<MDIFrame> mainFrame;
 	ScopedPointer<MDIFrame> rightFrame;
-	Toolbar toolBar;
-	StretchableLayoutManager mainLayout;
+    ScopedPointer<ComponentSettings> settingsPanel;
 	ScopedPointer<StretchableLayoutResizerBar> spliteBar;
+
+    StretchableLayoutManager layoutManager;    
+    Toolbar toolBar;
 	
 private:
 	void updateLayoutMode();

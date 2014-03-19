@@ -14,13 +14,33 @@
 #include "BarChart.h"
 #include "RealTimeValue.h"
 #include "ShapeComponent.h"
+#include "MainComponent.h"
+DocumentView::DocumentView(PropertyPanel * panel):FileBasedDocument (".jnote", "*.jnote",
+                             "Browse for note to load",
+							 "Choose file to save note to")
+{
+	setName("child");
+	propertyPanel = panel;
+	setLookAndFeel(lookAndFeel = new LookAndFeel_V3());
+	BaseComponent * c = new MeterChart(this);
+	compArray.add(c);
+	//addChangeListener((ChangeListener*)c);
+	addAndMakeVisible(c);
+	c = new BarChart(this);
+	compArray.add(c);
+	//selectedItemSet.addChangeListener((ChangeListener*)c);
+	addAndMakeVisible(c);
+	setSize(500, 250);
 
+
+}  
 DocumentView::DocumentView():FileBasedDocument (".jnote", "*.jnote",
                              "Browse for note to load",
 							 "Choose file to save note to")
 {
 	setSize(500, 250);
 	setName("child");
+	propertyPanel = nullptr;
 	setLookAndFeel(lookAndFeel = new LookAndFeel_V3());
 	BaseComponent * c = new MeterChart(this);
 	compArray.add(c);
@@ -52,6 +72,15 @@ DocumentView::DocumentView():FileBasedDocument (".jnote", "*.jnote",
 }
 void DocumentView::mouseDown(const MouseEvent& e)
 {
+	if(propertyPanel)
+	{
+		Array<PropertyComponent*> comps;
+		comps.add (new TextPropertyComponent (Value ("This is a single-line Text Property"), 
+    	"Text 1", 200, false));
+		propertyPanel->clear();
+    	propertyPanel->addProperties(comps);
+	}
+
 	deselectAll();
 }
 

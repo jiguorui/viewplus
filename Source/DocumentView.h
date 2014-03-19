@@ -16,6 +16,7 @@
 class DocumentView: public Component, public FileBasedDocument, public SelectedComponentSet
 {
 public:
+    DocumentView(PropertyPanel *);
 	DocumentView();
 	~DocumentView();
 	void paint (Graphics&);
@@ -66,6 +67,7 @@ private:
 	OwnedArray<BaseComponent> compArray;
 	//SelectedItems selectedItemSet;
 	ScopedPointer<LookAndFeel> 	lookAndFeel;
+    PropertyPanel * propertyPanel;
 
 private:
     //==============================================================================

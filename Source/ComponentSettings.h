@@ -12,6 +12,21 @@
 #define SHAPEPROPERTYDIALOG_H_INCLUDED
 #include "../JuceLibraryCode/JuceHeader.h"
 
+class ComponentSettings : public Component
+{
+public:
+	ComponentSettings();
+	~ComponentSettings();
+	void paint(Graphics& g) override;
+	void resized();
+	 PropertyPanel * getPropertyPanel() {return propertyPanel;}
+private:
+ ScopedPointer<PropertyPanel> propertyPanel;
+private:
+	//==============================================================================
+	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ComponentSettings)	
+};
+
 #if 0
 class BaseComponent;
 class PropertyPage : public Component, public TableListBoxModel, private Button::Listener

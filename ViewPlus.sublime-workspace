@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"doc",
+				"documentView"
+			],
+			[
+				"Sel",
+				"SelectedComponentSet"
+			],
+			[
 				"ini",
 				"initSecondOrder"
 			],
@@ -243,6 +251,86 @@
 	},
 	"buffers":
 	[
+		{
+			"file": "Source/BaseComponent.h",
+			"settings":
+			{
+				"buffer_size": 1339,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Source/SelectedComponentSet.h",
+			"settings":
+			{
+				"buffer_size": 574,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Source/SelectedComponentSet.cpp",
+			"settings":
+			{
+				"buffer_size": 485,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Source/MeterChart.h",
+			"settings":
+			{
+				"buffer_size": 1481,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Source/MeterChart.cpp",
+			"settings":
+			{
+				"buffer_size": 3505,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Source/DocumentView.h",
+			"settings":
+			{
+				"buffer_size": 1895,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Source/BaseComponent.cpp",
+			"settings":
+			{
+				"buffer_size": 2391,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Source/DocumentView.cpp",
+			"settings":
+			{
+				"buffer_size": 2522,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Source/BarChart.h",
+			"settings":
+			{
+				"buffer_size": 1376,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Source/BarChart.cpp",
+			"settings":
+			{
+				"buffer_size": 4478,
+				"line_ending": "Windows"
+			}
+		}
 	],
 	"build_system": "",
 	"command_palette":
@@ -268,6 +356,19 @@
 	},
 	"file_history":
 	[
+		"/E/jiguorui/ViewPlus/Source/SelectedItems.h",
+		"/E/jiguorui/ViewPlus/Source/SelectedItems.cpp",
+		"/E/jiguorui/ViewPlus/Source/PropertyPage.cpp",
+		"/E/jiguorui/ViewPlus/Source/DocumentView.h",
+		"/E/jiguorui/ViewPlus/Source/BaseComponent.cpp",
+		"/E/jiguorui/ViewPlus/Source/DocumentView.cpp",
+		"/E/jiguorui/ViewPlus/Source/BarChart.h",
+		"/E/jiguorui/ViewPlus/Source/MeterChart.h",
+		"/E/jiguorui/ViewPlus/Source/MeterChart.cpp",
+		"/E/jiguorui/ViewPlus/Source/RealTimeValue.h",
+		"/E/jiguorui/ViewPlus/Source/RealTimeValue.cpp",
+		"/E/jiguorui/ViewPlus/Source/ShapeComponent.h",
+		"/E/jiguorui/ViewPlus/Source/ShapeComponent.cpp",
 		"/E/jiguorui/discon/test.c",
 		"/D/juce/JUCE/extras/Demo/Source/Demos/PropertiesDemo.cpp",
 		"/E/jiguorui/discon/disconlog.c",
@@ -382,20 +483,7 @@
 		"/E/jiguorui/Jiguorui/innoview/cef/cefclient/cefclient_win.cpp",
 		"/E/jiguorui/Jiguorui/innoview/cef/cefclient/cefclient.cpp",
 		"/E/jiguorui/Jiguorui/innoview/cef/cefclient/client_app.h",
-		"/E/jiguorui/Jiguorui/main.py",
-		"/E/jiguorui/Jiguorui/codeview/main.cpp",
-		"/D/important/EverBox/UPSrc/UPHmi/main.cpp",
-		"/D/important/EverBox/UPSrc/UPHmi/wecop.cpp",
-		"/D/important/EverBox/UPSrc/UPHmi/m1com.h",
-		"/C/GHControllers/GUP6p0/Source/Algorithm/Algorithm/TorqueLimits.cc",
-		"/C/GHControllers/GUP6p0/Source/Algorithm/Algorithm/TorqueControl.cc",
-		"/C/FAST/Compiling/Compile_FAST.bat",
-		"/C/FAST/Source/BladedDLLInterface.f90",
-		"/C/FAST/Source/makefile",
-		"/C/FAST/Source/SharedInflowDefs.f90",
-		"/C/FAST/Source/NWTC_IO.f90",
-		"/C/FAST/Source/SysGnuWin.f90",
-		"/C/Users/jiguo_000/Downloads/gcc-fortran-4.6.1.tar/gcc-fortran-4.6.1/gcc-4.6.1/gcc/fortran/Make-lang.in"
+		"/E/jiguorui/Jiguorui/main.py"
 	],
 	"find":
 	{
@@ -467,8 +555,277 @@
 	"groups":
 	[
 		{
+			"selected": 9,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "Source/BaseComponent.h",
+					"settings":
+					{
+						"buffer_size": 1339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1043,
+								1043
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 570.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Source/SelectedComponentSet.h",
+					"settings":
+					{
+						"buffer_size": 574,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								405,
+								405
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "Source/SelectedComponentSet.cpp",
+					"settings":
+					{
+						"buffer_size": 485,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								280,
+								280
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Source/MeterChart.h",
+					"settings":
+					{
+						"buffer_size": 1481,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								586,
+								586
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 261.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Source/MeterChart.cpp",
+					"settings":
+					{
+						"buffer_size": 3505,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1216,
+								1216
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 618.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "Source/DocumentView.h",
+					"settings":
+					{
+						"buffer_size": 1895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1474,
+								1474
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1023.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Source/BaseComponent.cpp",
+					"settings":
+					{
+						"buffer_size": 2391,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1300,
+								1300
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 139.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "Source/DocumentView.cpp",
+					"settings":
+					{
+						"buffer_size": 2522,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								821,
+								821
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 308.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "Source/BarChart.h",
+					"settings":
+					{
+						"buffer_size": 1376,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								529,
+								529
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "Source/BarChart.cpp",
+					"settings":
+					{
+						"buffer_size": 4478,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1884,
+								1884
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -528,6 +885,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 150.0,
+	"side_bar_width": 201.0,
 	"status_bar_visible": true
 }
