@@ -9,7 +9,7 @@
 */
 #include "ShapeComponent.h"
 
-ShapeComponent::ShapeComponent(SelectedItems *selectedItems) : BaseComponent(selectedItems)
+ShapeComponent::ShapeComponent(DocumentView *doc) : BaseComponent(doc)
 {
 	setSize(100, 100);
 	borderThickness = 2;
@@ -18,7 +18,7 @@ ShapeComponent::ShapeComponent(SelectedItems *selectedItems) : BaseComponent(sel
 ShapeComponent::~ShapeComponent()
 {
 }
-void ShapeComponent::paint(Graphics& g)
+void ShapeComponent::drawMyself(Graphics& g)
 {
 	g.setColour(Colour(borderColour));
 	g.drawEllipse((float)borderThickness, (float)borderThickness, (float)getWidth() - 2 * (float)borderThickness, (float)getHeight() - 2 * (float)borderThickness, (float)borderThickness);

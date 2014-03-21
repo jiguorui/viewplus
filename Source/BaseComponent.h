@@ -31,14 +31,19 @@ public:
 	void multiSelectedMove(int dx, int dy);
 	void setSelected(bool sel);
 	virtual Array<PropertyComponent*> createPropertyComponents() {Array<PropertyComponent*> comps; return comps;}
+
+	virtual void drawMyself(Graphics& g) {};
 private:
 	void mouseDown(const MouseEvent& e);
 	void mouseUp(const MouseEvent& e);
 	void mouseDrag(const MouseEvent& e);
 	void mouseDoubleClick(const MouseEvent&/* e*/);
 
+	void drawRectesWhenSelected(Graphics& g);
+
 	bool resultOfMouseDownSelectMethod;
 	bool wasDraged;
+	bool wasSelected;
 	int lastX, lastY;
 
 	ComponentDragger dragger;

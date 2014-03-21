@@ -13,6 +13,7 @@
 BaseComponent::BaseComponent(DocumentView *doc)
 {
 	setSize(100, 100);
+	wasSelected = false;
 	resizeBorder = new ResizableBorderComponent(this, nullptr);
 	addChildComponent(resizeBorder);
 	resizeBorder->setBounds(getLocalBounds());	
@@ -21,6 +22,7 @@ BaseComponent::BaseComponent(DocumentView *doc)
 BaseComponent::BaseComponent(SelectedItems* selectedItems)
 {
 	setSize(100, 100);
+	wasSelected = false;
 	resizeBorder = new ResizableBorderComponent(this, nullptr);
 	addChildComponent(resizeBorder);
 	resizeBorder->setBounds(getLocalBounds());
@@ -31,7 +33,8 @@ BaseComponent::~BaseComponent()
 }
 void BaseComponent::paint (Graphics& g)
 {
-	g.drawRect(getLocalBounds(), 1);
+	drawMyself(g);
+	drawRectesWhenSelected(g);
 }
 void BaseComponent::resized()
 {
@@ -45,6 +48,7 @@ void BaseComponent::changeListenerCallback(ChangeBroadcaster* /*source*/)
 void BaseComponent::setSelected(bool sel)
 {
 	resizeBorder->setVisible(sel);
+	wasSelected = sel;
 }
 void BaseComponent::mouseDown(const MouseEvent& e)
 {
@@ -95,4 +99,27 @@ void BaseComponent::multiSelectedMove(int dx, int dy)
 	Rectangle<int> rect = getBounds();
 	rect.translate(dx, dy);
 	setBounds(rect);
+}
+
+void BaseComponent::drawRectesWhenSelected(Graphics& g)
+{
+	if(wasSelected)
+	{
+		int w = getWidth();
+		int h = getHeight();
+		float size = 10.0f;
+
+		g.setColour(Colour(0xcfffffff));
+		g.fillRect(0.0f, 0.0f, size, size);
+		g.fillRect(0.0f, h - size, size, size);
+		g.fillRect(w - size, 0.0f, size, size);
+		g.fillRect(w - size, h - size, size, size);
+
+		g.setColour(Colour(0xcf000000));
+		g.drawRect(0.0f, 0.0f, size, size, 1.0f);
+		g.drawRect(0.0f, h - size, size, size, 1.0f);
+		g.drawRect(w - size, 0.0f, size, size, 1.0f);
+		g.drawRect(w - size, h - size, size, size, 1.0f);
+
+	}
 }

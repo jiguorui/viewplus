@@ -19,7 +19,7 @@ class RealTimeValue : public BaseComponent, public MeasurePoint
 public:
 	RealTimeValue(DocumentView* doc);
 	~RealTimeValue();
-	void paint(Graphics& g) override;
+	void drawMyself(Graphics& g) override;
 
 	Array<PropertyComponent*> createPropertyComponents() override;
 	void valueChanged(Value &val) override;

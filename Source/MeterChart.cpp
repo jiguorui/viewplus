@@ -47,7 +47,7 @@ Array<PropertyComponent*> MeterChart::createPropertyComponents()
 	return comps;
 }
 
-void MeterChart::paint(Graphics &g)
+void MeterChart::drawMyself(Graphics &g)
 {
 
 	int w, h;
@@ -112,6 +112,8 @@ void MeterChart::paint(Graphics &g)
 		g.drawText(String(i * 0.5f*(getTo() - getFrom()) + getFrom(), 0), x1 - 20, y1-R+25, 40, 20, Justification::centred, true);
 		g.addTransform(AffineTransform().rotated(MATH_PI*3/4, x1,y1));
 	}
+	//reset transform
+	g.addTransform(AffineTransform().rotated(-1*MATH_PI*3/2, x1,y1));
 }
 
 void MeterChart::getRPos(float x, float y, float rad, float r, Point<float> &pos)

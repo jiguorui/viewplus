@@ -22,8 +22,9 @@ public:
 	BarChart(SelectedItems* selectedItems, float from, float to, bool vertical);
 	~BarChart();
 
-	void paint(Graphics&) override;
-
+	void drawMyself(Graphics&) override;
+	//Array<PropertyComponent*> createPropertyComponents() override;
+	//void valueChanged(Value &val) override;
 private:
 	bool isVertical;
 	float borderThickness;
@@ -31,6 +32,8 @@ private:
 	Colour backColour;
 	Colour foreColour;
 
+	Value borderColourValue;
+	Value backColourValue;
 
 protected:
 	void visibilityChanged() override;

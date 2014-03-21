@@ -36,6 +36,10 @@ DocumentView::DocumentView(PropertyPanel * panel):FileBasedDocument (".jnote", "
 	compArray.add(c);
 	//selectedItemSet.addChangeListener((ChangeListener*)c);
 	addAndMakeVisible(c);
+	c = new ShapeComponent(this);
+	compArray.add(c);
+	//selectedItemSet.addChangeListener((ChangeListener*)c);
+	addAndMakeVisible(c);
 
 	setSize(500, 250);
 

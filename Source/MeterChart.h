@@ -21,7 +21,7 @@ public:
 	MeterChart(DocumentView* doc);
 	~MeterChart();
 	
-	void paint (Graphics&) override;
+	void drawMyself (Graphics&) override;
 	Array<PropertyComponent*> createPropertyComponents() override;
 	void valueChanged(Value &val) override;
 protected:

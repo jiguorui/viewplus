@@ -24,7 +24,7 @@ RealTimeValue::RealTimeValue(DocumentView* doc) : BaseComponent(doc)
 RealTimeValue::~RealTimeValue()
 {
 }
-void RealTimeValue::paint(Graphics& g)
+void RealTimeValue::drawMyself(Graphics& g)
 {
 	g.setColour(fontColour);
 	g.setFont(fontSize);

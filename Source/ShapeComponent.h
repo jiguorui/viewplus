@@ -17,9 +17,9 @@
 class ShapeComponent : public BaseComponent, public MeasurePoint
 {
 public:
-	ShapeComponent(SelectedItems * selectedItems);
+	ShapeComponent(DocumentView * doc);
 	~ShapeComponent();
-	void paint(Graphics& g);
+	void drawMyself(Graphics& g) override;
 
 //	void setPropertyPage(PropertyPage *);
 //	void setProperties(StringArray strs);

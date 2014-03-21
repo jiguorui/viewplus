@@ -12,9 +12,9 @@ Author:  Ji-Guorui,jiguorui@gmail.com
 BarChart::BarChart(DocumentView *doc) : BaseComponent(doc)
 {
 	isVertical = true;
-	borderThickness = 1.0f;
-	borderColour = Colour(0xffff6400);
-	backColour = Colour(0xff989898);
+	borderThickness = 2.0f;
+	borderColour = Colour(0xff989898);
+	backColour = Colour(0xffc8c8c8);
 	foreColour = Colour(0xff61CE3C);
 
 	setValue(0.6f);
@@ -28,14 +28,33 @@ BarChart::~BarChart()
 
 }
 
-void BarChart::paint(Graphics& g)
+void BarChart::drawMyself(Graphics& g)
 {
 	int w = getWidth();
 	int h = getHeight();
 	float ratio = getRatio();
+	float rH = ratio * h;
 	g.setColour(borderColour);
 	g.drawRect(0.0f, 0.0f, (float)w, (float)h, borderThickness);
+	g.setColour(backColour);
+	g.fillRect(borderThickness, borderThickness, w - 2 * borderThickness, h - 2 * borderThickness);
+	g.setColour(foreColour);
+	g.fillRect(borderThickness, h - rH - borderThickness, w - 2 * borderThickness, rH);
+
+//	drawRectesWhenSelected(g);
 }
+/*
+Array<PropertyComponent*> BarChart::createPropertyComponents()
+{
+	Array<PropertyComponent*> comps;
+	comps.add(new TextPropertyComponent(dialColourValue, "DialColour", 10, false));
+	comps.add(new TextPropertyComponent(pointerColourValue, "pointerColour", 10, false));
+	comps.add(new TextPropertyComponent(fontColourValue, "fontColour", 10, false));
+	comps.add(new SliderPropertyComponent(fontSizeValue, "fontSize", 0.0,  100.0, 0.5));
+
+	return comps;
+}
+*/
 /*{
 	int w = getWidth();
 	int h = getHeight();
