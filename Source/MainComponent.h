@@ -37,6 +37,7 @@ private:
     Toolbar toolBar;
 	
 private:
+	void mouseDown(const MouseEvent& e);
 	void updateLayoutMode();
 private:
     //==============================================================================

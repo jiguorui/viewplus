@@ -22,30 +22,25 @@ public:
 	~MeterChart();
 	
 	void paint (Graphics&) override;
-	//void resized();
-//	void setPropertyPage(PropertyPage *);
-//	void setProperties(StringArray strs);
+	Array<PropertyComponent*> createPropertyComponents() override;
+	void valueChanged(Value &val) override;
 protected:
 	void visibilityChanged() override;
-	/*
-	void mouseDown(const MouseEvent& e)
-	{
-		dragger.startDraggingComponent(this, e);
-		
-	}
-	void mouseDrag(const MouseEvent& e)
-	{
-		dragger.dragComponent(this, e, nullptr);
-	}*/
+
 private:
-	int segLineColour;
-	//void drawPanel(Graphics &, int , int);
 	void getRLine(float x, float y, float rad, float r1, float r2, Line<float> &line); 
 	void getRPos(float x, float y, float rad, float r, Point<float> &pos);
-	//ComponentDragger dragger;
-	//ScopedPointer<ResizableBorderComponent>  resizeBorder;
-private:
+
 	void timerCallback() override;
+
+	Value dialColourValue;
+	Colour dialColour;
+	Value pointerColourValue;
+	Colour pointerColour;
+	Value fontColourValue;
+	Colour fontColour;
+	Value fontSizeValue;
+	int fontSize;
 
     //==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (MeterChart)

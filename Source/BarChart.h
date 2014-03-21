@@ -23,23 +23,14 @@ public:
 	~BarChart();
 
 	void paint(Graphics&) override;
-	//void resized();
-	
-public:
-	void setVertical(bool);
-	void setBorderThickness(float);
 
-	enum ColourIds
-    {
-        backgroundColourId              = 0x2001900,    
-        foregroundColourId              = 0x2001a00,    
-		borderColourId                  = 0x2001b00,
-    };
-//	void setPropertyPage(PropertyPage *) {}
-//	void setProperties(StringArray strs){}
 private:
 	bool isVertical;
 	float borderThickness;
+	Colour borderColour;
+	Colour backColour;
+	Colour foreColour;
+
 
 protected:
 	void visibilityChanged() override;

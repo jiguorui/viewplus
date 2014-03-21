@@ -23,7 +23,6 @@ MainContentComponent::MainContentComponent()
 	addAndMakeVisible(spliteBar);
 
 	settingsPanel = new ComponentSettings();
-	//propertyPanel->setBackgroundColour(Colours::whitesmoke);//setBackgroundColour(Colours::wihtesmoke);
 	addAndMakeVisible(settingsPanel);
 
 	mainFrame = new MDIFrame();
@@ -67,4 +66,9 @@ void MainContentComponent::updateLayoutMode()
 PropertyPanel * MainContentComponent::getPropertyPanel()
 {
 	return settingsPanel->getPropertyPanel();
+}
+
+void MainContentComponent::mouseDown(const MouseEvent& /*e*/)
+{
+	if(settingsPanel) settingsPanel->getPropertyPanel()->clear();
 }

@@ -17,14 +17,21 @@
 class RealTimeValue : public BaseComponent, public MeasurePoint
 {
 public:
-	RealTimeValue(SelectedItems* selectedItems);
+	RealTimeValue(DocumentView* doc);
 	~RealTimeValue();
 	void paint(Graphics& g) override;
-//	void setPropertyPage(PropertyPage *);
-//	void setProperties(StringArray strs);
+
+	Array<PropertyComponent*> createPropertyComponents() override;
+	void valueChanged(Value &val) override;
+
 private:
 	int fontSize;
-	int fontColour;
+	int numDecimal;
+	Colour fontColour;
+
+	Value fontSizeValue;
+	Value fontColourValue;
+	Value numDecimalValue;
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (RealTimeValue)
 

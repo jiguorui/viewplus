@@ -9,19 +9,42 @@
 */
 
 #include "MeterChart.h"
-//#include "WidgetPanel.h"
 
 #define MATH_PI 3.1415926f
 #define ZRAD(rad) (rad)-MATH_PI/4*3
 MeterChart::MeterChart(DocumentView *doc) : BaseComponent(doc)
 {
-	setSize(200, 200);
 	setValue(0.5f);
-	segLineColour = 0xff00ff00;
-	//resizer->setCentrePosition(195, 195);
+	dialColourValue = Value("0xff61CE3C");
+	pointerColourValue = Value("0xffff6400");
+	fontColourValue = Value("0xfff8f8f8");
+	fontSizeValue = Value("18");
+
+	dialColourValue.addListener(this);
+	pointerColourValue.addListener(this);
+	fontColourValue.addListener(this);
+	fontSizeValue.addListener(this);
+
+	dialColour = Colour(dialColourValue.toString().getHexValue32());
+	pointerColour = Colour(pointerColourValue.toString().getHexValue32());
+	fontColour = Colour(fontColourValue.toString().getHexValue32());
+	fontSize = fontSizeValue.toString().getIntValue();
+
+	setSize(200, 200);
 }
 MeterChart::~MeterChart()
 {
+}
+
+Array<PropertyComponent*> MeterChart::createPropertyComponents()
+{
+	Array<PropertyComponent*> comps;
+	comps.add(new TextPropertyComponent(dialColourValue, "DialColour", 10, false));
+	comps.add(new TextPropertyComponent(pointerColourValue, "pointerColour", 10, false));
+	comps.add(new TextPropertyComponent(fontColourValue, "fontColour", 10, false));
+	comps.add(new SliderPropertyComponent(fontSizeValue, "fontSize", 0.0,  100.0, 0.5));
+
+	return comps;
 }
 
 void MeterChart::paint(Graphics &g)
@@ -54,31 +77,32 @@ void MeterChart::paint(Graphics &g)
 		path.addLineSegment(lineTmp, 0.5f);
 	}
 	//g.setColour(Colours::dodgerblue);
-	g.setColour(Colour(segLineColour));
+	//segLineColour = dialColour.toString().getHexValue32();
+	g.setColour(dialColour);
 	PathStrokeType pst(2.0f);
 	g.strokePath(path,pst);
 
-	g.setColour(Colours::green);
+	g.setColour(dialColour);
 	g.drawEllipse(w / 2 - 4, h / 2 - 4, 8, 8, 2.0f);
-	g.setColour(Colours::red);
+	g.setColour(pointerColour);
 	g.fillEllipse(w / 2 - 3, h / 2 - 3, 6, 6);
-	//g.setColour(Colours::orange);
+
 	float ratio = getRatio();
 	getRLine(x1, y1, ratio * MATH_PI * 1.5, -1 * R / 10, R - 45, lineTmp);
 	g.drawLine(lineTmp, 2.0f);
 	String str;
 	str << String(getValue(),0) << " " << getUnit();
-	Font font(String("Times New Roman"), 20, Font::plain);
+	Font font(String("Times New Roman"), fontSize, Font::plain);
 	g.setFont(font);
-	g.setColour(Colours::green);
+	g.setColour(fontColour);
 	g.drawText(str, (int)x1-50, (int)(y1 + R - 80), 100, 22, Justification::centred, true);
-	g.setColour(Colours::grey);
-	font.setTypefaceName(String(L"ºÚÌå"));
-	font.setHeight(15);
+	g.setColour(fontColour);
+	//font.setTypefaceName(String(L"ºÚÌå"));
+	//font.setHeight(fontSize);
 	g.setFont(font);
 	str = getLegend();
 	g.drawText(str, (int)x1-50, (int)(y1 + R - 45), 100, 22, Justification::centred, true);
-	g.setColour(Colours::grey);
+	g.setColour(Colour(dialColour));
 	Point<float> pos;
 	float rad = 0.0f;
 	font.setBold(false);
@@ -128,6 +152,14 @@ void MeterChart::visibilityChanged()
 void MeterChart::timerCallback()
 {
 	repaint();
+}
+
+void MeterChart::valueChanged(Value& /*val*/) 
+{
+	dialColour = Colour(dialColourValue.toString().getHexValue32());
+	pointerColour = Colour(pointerColourValue.toString().getHexValue32());
+	fontColour = Colour(fontColourValue.toString().getHexValue32());
+	fontSize = fontSizeValue.toString().getIntValue();
 }
 /*
 void MeterChart::setPropertyPage(PropertyPage *pg)

@@ -8,39 +8,42 @@
   ==============================================================================
 */
 #include "RealTimeValue.h"
-RealTimeValue::RealTimeValue(SelectedItems* selectedItems) : BaseComponent(selectedItems)
+RealTimeValue::RealTimeValue(DocumentView* doc) : BaseComponent(doc)
 {
 	setSize(120, 50);
 	fontSize = 18;
-	fontColour = 0xff00ff00;
+	fontColour = Colour(0xff00ff00);
+	numDecimal = 2;
+	fontSizeValue = Value("18");
+	fontColourValue = Value("0xff00ff00");
+	numDecimalValue = Value("2");
+	fontColourValue.addListener(this);
+	fontSizeValue.addListener(this);
+	numDecimalValue.addListener(this);
 }
 RealTimeValue::~RealTimeValue()
 {
 }
 void RealTimeValue::paint(Graphics& g)
 {
-	g.setColour(Colour(fontColour));
+	g.setColour(fontColour);
 	g.setFont(fontSize);
-	g.drawText(String(getValue(), 2), getLocalBounds(), Justification::centred, false);
-}
-/*
-void RealTimeValue::setPropertyPage(PropertyPage *pg)
-{
-	pg->propertyNames.add(new String("Font size"));
-	pg->propertyNames.add(new String("Font colour"));
-	Component **c = new Component*();
-	*c = new TextEditor();
-	((TextEditor*)*c)->setText(String(fontSize));
-	pg->propertyComps.add(c);
-	c = new Component*();
-	*c = new TextEditor();
-	((TextEditor*)*c)->setText(String::toHexString(fontColour));
-	pg->propertyComps.add(c);
+	g.drawText(String(getValue(), numDecimal), getLocalBounds(), Justification::centred, false);
 }
 
-void RealTimeValue::setProperties(StringArray strs)
+Array<PropertyComponent*> RealTimeValue::createPropertyComponents()
 {
-	fontSize = strs[0].getIntValue();
-	fontColour = strs[1].getHexValue32();
+	Array<PropertyComponent*> comps;
+	comps.add(new TextPropertyComponent(fontColourValue, "fontColour", 10, false));
+	comps.add(new SliderPropertyComponent(fontSizeValue, "fontSize", 0.0,  100.0, 0.5));
+	comps.add(new TextPropertyComponent(numDecimalValue, "numDecimal", 3, false));
+	return comps;
+}
+
+void RealTimeValue::valueChanged(Value &/*val*/)
+{
+	fontSize = fontSizeValue.toString().getIntValue();
+	fontColour = Colour(fontColourValue.toString().getHexValue32());
+	numDecimal = numDecimalValue.toString().getIntValue();
 	repaint();
-}*/
+}

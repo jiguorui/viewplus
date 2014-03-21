@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"add",
+				"addProperties"
+			],
+			[
+				"pro",
+				"propertyPanel"
+			],
+			[
+				"Ma",
+				"MainComponent"
+			],
+			[
+				"get",
+				"getPropertyPanel"
+			],
+			[
+				"seting",
+				"settingsPanel"
+			],
+			[
+				"Pr",
+				"PropertyPanel"
+			],
+			[
+				"set",
+				"setColour"
+			],
+			[
+				"pri",
+				"private"
+			],
+			[
+				"Com",
+				"ComponentSettings"
+			],
+			[
+				"setCo",
+				"setBackgroundColour"
+			],
+			[
+				"Pro",
+				"propertyPanel"
+			],
+			[
 				"doc",
 				"documentView"
 			],
@@ -216,10 +260,6 @@
 				"pythonchallenge"
 			],
 			[
-				"get",
-				"get-it"
-			],
-			[
 				"ws",
 				"wsgi"
 			],
@@ -252,58 +292,58 @@
 	"buffers":
 	[
 		{
-			"file": "Source/BaseComponent.h",
+			"file": "Source/MainComponent.cpp",
 			"settings":
 			{
-				"buffer_size": 1339,
+				"buffer_size": 2101,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Source/SelectedComponentSet.h",
+			"file": "Source/MainComponent.h",
 			"settings":
 			{
-				"buffer_size": 574,
+				"buffer_size": 1385,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Source/SelectedComponentSet.cpp",
+			"file": "Source/PropertyPage.h",
 			"settings":
 			{
-				"buffer_size": 485,
+				"buffer_size": 3569,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Source/MeterChart.h",
+			"file": "Source/PropertyPage.cpp",
 			"settings":
 			{
-				"buffer_size": 1481,
+				"buffer_size": 0,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Source/MeterChart.cpp",
+			"file": "Source/ComponentSettings.h",
 			"settings":
 			{
-				"buffer_size": 3505,
+				"buffer_size": 3996,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Source/DocumentView.h",
+			"file": "JuceLibraryCode/modules/juce_gui_basics/properties/juce_PropertyPanel.h",
 			"settings":
 			{
-				"buffer_size": 1895,
+				"buffer_size": 6064,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Source/BaseComponent.cpp",
+			"file": "Source/ComponentSettings.cpp",
 			"settings":
 			{
-				"buffer_size": 2391,
+				"buffer_size": 3670,
 				"line_ending": "Windows"
 			}
 		},
@@ -311,23 +351,23 @@
 			"file": "Source/DocumentView.cpp",
 			"settings":
 			{
-				"buffer_size": 2522,
+				"buffer_size": 3366,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Source/BarChart.h",
+			"file": "Source/DocumentView.h",
 			"settings":
 			{
-				"buffer_size": 1376,
+				"buffer_size": 1965,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "Source/BarChart.cpp",
+			"file": "Source/MDIFrame.h",
 			"settings":
 			{
-				"buffer_size": 4478,
+				"buffer_size": 922,
 				"line_ending": "Windows"
 			}
 		}
@@ -356,15 +396,25 @@
 	},
 	"file_history":
 	[
-		"/E/jiguorui/ViewPlus/Source/SelectedItems.h",
-		"/E/jiguorui/ViewPlus/Source/SelectedItems.cpp",
-		"/E/jiguorui/ViewPlus/Source/PropertyPage.cpp",
+		"/E/jiguorui/ViewPlus/JuceLibraryCode/modules/juce_gui_basics/layout/juce_StretchableLayoutManager.h",
+		"/E/jiguorui/ViewPlus/JuceLibraryCode/modules/juce_gui_basics/layout/juce_ConcertinaPanel.h",
+		"/E/jiguorui/ViewPlus/Source/MeterChart.cpp",
+		"/E/jiguorui/ViewPlus/Source/MeterChart.h",
+		"/E/jiguorui/ViewPlus/Source/SelectedComponentSet.cpp",
+		"/E/jiguorui/ViewPlus/Source/SelectedComponentSet.h",
+		"/E/jiguorui/ViewPlus/Source/BaseComponent.h",
 		"/E/jiguorui/ViewPlus/Source/DocumentView.h",
 		"/E/jiguorui/ViewPlus/Source/BaseComponent.cpp",
 		"/E/jiguorui/ViewPlus/Source/DocumentView.cpp",
 		"/E/jiguorui/ViewPlus/Source/BarChart.h",
-		"/E/jiguorui/ViewPlus/Source/MeterChart.h",
-		"/E/jiguorui/ViewPlus/Source/MeterChart.cpp",
+		"/E/jiguorui/ViewPlus/Source/BarChart.cpp",
+		"/E/jiguorui/ViewPlus/ViewPlus.sublime-project",
+		"/E/jiguorui/ViewPlus/ViewPlus.sublime-workspace",
+		"/E/jiguorui/ViewPlus/JuceLibraryCode/modules/juce_gui_extra/juce_gui_extra.h",
+		"/E/jiguorui/ViewPlus/JuceLibraryCode/modules/juce_gui_basics/layout/juce_ComponentMovementWatcher.h",
+		"/E/jiguorui/ViewPlus/Source/SelectedItems.h",
+		"/E/jiguorui/ViewPlus/Source/SelectedItems.cpp",
+		"/E/jiguorui/ViewPlus/Source/PropertyPage.cpp",
 		"/E/jiguorui/ViewPlus/Source/RealTimeValue.h",
 		"/E/jiguorui/ViewPlus/Source/RealTimeValue.cpp",
 		"/E/jiguorui/ViewPlus/Source/ShapeComponent.h",
@@ -473,17 +523,7 @@
 		"/E/jiguorui/Jiguorui/innoview/main.cpp",
 		"/E/jiguorui/Jiguorui/innoview/cef/cefclient/binding_test.cpp",
 		"/E/edrive/temp/UPHmi/wecop.h",
-		"/E/edrive/temp/UPHmi/window.cpp",
-		"/E/jiguorui/Jiguorui/innoview/include/cef_v8.h",
-		"/E/edrive/temp/UPHmi/UPWind.html",
-		"/E/jiguorui/Jiguorui/innoview/cef/include/cef_app.h",
-		"/E/dropbox/skydrive/projects/DBLite/makefile",
-		"/E/jiguorui/Jiguorui/innoview/simple_handler.h",
-		"/E/jiguorui/Jiguorui/innoview/util.h",
-		"/E/jiguorui/Jiguorui/innoview/cef/cefclient/cefclient_win.cpp",
-		"/E/jiguorui/Jiguorui/innoview/cef/cefclient/cefclient.cpp",
-		"/E/jiguorui/Jiguorui/innoview/cef/cefclient/client_app.h",
-		"/E/jiguorui/Jiguorui/main.py"
+		"/E/edrive/temp/UPHmi/window.cpp"
 	],
 	"find":
 	{
@@ -555,23 +595,23 @@
 	"groups":
 	[
 		{
-			"selected": 9,
+			"selected": 8,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "Source/BaseComponent.h",
+					"file": "Source/MainComponent.cpp",
 					"settings":
 					{
-						"buffer_size": 1339,
+						"buffer_size": 2101,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1043,
-								1043
+								1587,
+								1587
 							]
 						],
 						"settings":
@@ -580,131 +620,25 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 570.0,
+						"translation.y": 755.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "Source/SelectedComponentSet.h",
+					"file": "Source/MainComponent.h",
 					"settings":
 					{
-						"buffer_size": 574,
+						"buffer_size": 1385,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								405,
-								405
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "Source/SelectedComponentSet.cpp",
-					"settings":
-					{
-						"buffer_size": 485,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								280,
-								280
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "Source/MeterChart.h",
-					"settings":
-					{
-						"buffer_size": 1481,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								586,
-								586
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 261.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "Source/MeterChart.cpp",
-					"settings":
-					{
-						"buffer_size": 3505,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1216,
-								1216
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 618.0,
-						"zoom_level": 1.0
-					},
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "Source/DocumentView.h",
-					"settings":
-					{
-						"buffer_size": 1895,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1474,
-								1474
+								891,
+								891
 							]
 						],
 						"settings":
@@ -714,25 +648,51 @@
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 1023.0,
+						"translation.y": 154.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
-					"buffer": 6,
-					"file": "Source/BaseComponent.cpp",
+					"buffer": 2,
+					"file": "Source/PropertyPage.h",
 					"settings":
 					{
-						"buffer_size": 2391,
+						"buffer_size": 3569,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1300,
-								1300
+								376,
+								376
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 66.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "Source/PropertyPage.cpp",
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
 							]
 						],
 						"settings":
@@ -741,7 +701,88 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 139.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "Source/ComponentSettings.h",
+					"settings":
+					{
+						"buffer_size": 3996,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 88.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "JuceLibraryCode/modules/juce_gui_basics/properties/juce_PropertyPanel.h",
+					"settings":
+					{
+						"buffer_size": 6064,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 810.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "Source/ComponentSettings.cpp",
+					"settings":
+					{
+						"buffer_size": 3670,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 310.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -751,15 +792,15 @@
 					"file": "Source/DocumentView.cpp",
 					"settings":
 					{
-						"buffer_size": 2522,
+						"buffer_size": 3366,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								821,
-								821
+								2380,
+								2380
 							]
 						],
 						"settings":
@@ -768,60 +809,63 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 308.0,
+						"translation.y": 1410.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 8,
-					"file": "Source/BarChart.h",
+					"file": "Source/DocumentView.h",
 					"settings":
 					{
-						"buffer_size": 1376,
+						"buffer_size": 1965,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								529,
-								529
+								263,
+								263
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/C++/C++.tmLanguage"
+							"syntax": "Packages/C++/C++.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 220.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
 				},
 				{
 					"buffer": 9,
-					"file": "Source/BarChart.cpp",
+					"file": "Source/MDIFrame.h",
 					"settings":
 					{
-						"buffer_size": 4478,
+						"buffer_size": 922,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1884,
-								1884
+								0,
+								0
 							]
 						],
 						"settings":
 						{
 							"syntax": "Packages/C++/C++.tmLanguage",
-							"translate_tabs_to_spaces": false
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 315.0,
 						"zoom_level": 1.0
 					},
 					"type": "text"
@@ -885,6 +929,6 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 201.0,
+	"side_bar_width": 300.0,
 	"status_bar_visible": true
 }

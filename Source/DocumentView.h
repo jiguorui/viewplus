@@ -13,7 +13,7 @@
 #include "../JuceLibraryCode/JuceHeader.h"
 #include "SelectedComponentSet.h"
 
-class DocumentView: public Component, public FileBasedDocument, public SelectedComponentSet
+class DocumentView: public Component, public FileBasedDocument, public SelectedComponentSet,private ValueListener
 {
 public:
     DocumentView(PropertyPanel *);
@@ -60,14 +60,16 @@ public:
     }
 
 	void mouseDoubleClick(const MouseEvent& e);
+	void valueChanged(Value &val);
 
-//	static SelectedItems & getSelectedItemSet(Component * c) { return ((DocumentView*) c)->selectedItemSet;}
-
+	PropertyPanel * getPropertyPanel() { return propertyPanel; }
 private:
 	OwnedArray<BaseComponent> compArray;
 	//SelectedItems selectedItemSet;
 	ScopedPointer<LookAndFeel> 	lookAndFeel;
-    PropertyPanel * propertyPanel;
+    PropertyPanel *  propertyPanel;
+
+	Value strHexBackGroundColour ;
 
 private:
     //==============================================================================

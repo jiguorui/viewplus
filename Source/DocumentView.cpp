@@ -20,16 +20,23 @@ DocumentView::DocumentView(PropertyPanel * panel):FileBasedDocument (".jnote", "
 							 "Choose file to save note to")
 {
 	setName("child");
+	strHexBackGroundColour = Value("0xff0c1021");
 	propertyPanel = panel;
 	setLookAndFeel(lookAndFeel = new LookAndFeel_V3());
 	BaseComponent * c = new MeterChart(this);
+	//((MeasurePoint*)c)->setLegend("Temp.");
 	compArray.add(c);
 	//addChangeListener((ChangeListener*)c);
+	addAndMakeVisible(c);
+	c = new RealTimeValue(this);
+	compArray.add(c);
+	//selectedItemSet.addChangeListener((ChangeListener*)c);
 	addAndMakeVisible(c);
 	c = new BarChart(this);
 	compArray.add(c);
 	//selectedItemSet.addChangeListener((ChangeListener*)c);
 	addAndMakeVisible(c);
+
 	setSize(500, 250);
 
 
@@ -75,10 +82,12 @@ void DocumentView::mouseDown(const MouseEvent& e)
 	if(propertyPanel)
 	{
 		Array<PropertyComponent*> comps;
-		comps.add (new TextPropertyComponent (Value ("This is a single-line Text Property"), 
-    	"Text 1", 200, false));
+		//strHexBackGroundColour = Value("0xff6a6a6a");
+		strHexBackGroundColour.addListener(this);
+		comps.add (new TextPropertyComponent (strHexBackGroundColour, 
+    	"Backcolour", 200, false));
 		propertyPanel->clear();
-    	propertyPanel->addProperties(comps);
+    	propertyPanel->addSection("View", comps);
 	}
 
 	deselectAll();
@@ -102,7 +111,8 @@ DocumentView::~DocumentView()
 
 void DocumentView::paint(Graphics& g)
 {
-	g.setColour(Colour(0xff4a4a4a));
+	int c = strHexBackGroundColour.toString().getHexValue32();
+	g.setColour(Colour(c));
 	g.fillAll();
 }
 
@@ -128,4 +138,9 @@ void DocumentView::mouseDoubleClick(const MouseEvent& /*e*/)
 		delete pp;
 		delete dlg;
 */
+}
+
+void DocumentView::valueChanged(Value&)
+{
+	repaint();
 }

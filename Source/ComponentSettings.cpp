@@ -10,13 +10,13 @@
 #include "ComponentSettings.h"
 ComponentSettings::ComponentSettings()
 {
+	propertyPanel = nullptr;
 	setSize(100, 200);
 	propertyPanel = new PropertyPanel();
 	addAndMakeVisible(propertyPanel);
 }
 ComponentSettings::~ComponentSettings()
 {
-	propertyPanel = nullptr;
 }
 
 void ComponentSettings::paint(Graphics& g)

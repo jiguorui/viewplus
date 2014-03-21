@@ -12,51 +12,31 @@ Author:  Ji-Guorui,jiguorui@gmail.com
 BarChart::BarChart(DocumentView *doc) : BaseComponent(doc)
 {
 	isVertical = true;
-
 	borderThickness = 1.0f;
-	setSize(80, 130);
-	setColour(BarChart::ColourIds::backgroundColourId, Colour(0xfff3f3f3));
-	setColour(BarChart::ColourIds::foregroundColourId, Colours::green);
-	setColour(BarChart::ColourIds::borderColourId, Colours::grey);
-	setValue(0.5f);
+	borderColour = Colour(0xffff6400);
+	backColour = Colour(0xff989898);
+	foreColour = Colour(0xff61CE3C);
+
+	setValue(0.6f);
+
+	setSize(90, 240);
 
 }
-BarChart::BarChart(SelectedItems* selectedItems, float from, float to, bool vertical) : BaseComponent(selectedItems)
-{
-	isVertical = vertical;
 
-	setRange(from, to);
-
-	borderThickness = 1.0f;
-	//default size
-	if(isVertical) setSize(110, 160);
-	else setSize(139, 21);
-	//default colours
-	setColour(BarChart::ColourIds::backgroundColourId, Colour(0xfff3f3f3));
-	setColour(BarChart::ColourIds::foregroundColourId, Colours::green);
-	setColour(BarChart::ColourIds::borderColourId, Colours::grey);
-
-}
-BarChart::BarChart(SelectedItems* selectedItems):BaseComponent(selectedItems)
-{
-	isVertical = false;
-
-	borderThickness = 1.0f;
-	//default size
-	setSize(139, 21);
-	//default colours
-	setColour(BarChart::ColourIds::backgroundColourId, Colour(0xfff3f3f3));
-	setColour(BarChart::ColourIds::foregroundColourId, Colours::green);
-	setColour(BarChart::ColourIds::borderColourId, Colours::grey);
-//	setColour(BarChart::ColourIds::valueColourId, Colours::grey);
-//	setColour(BarChart::ColourIds::legendColourId, Colours::black);
-}
 BarChart::~BarChart()
 {
+
 }
 
 void BarChart::paint(Graphics& g)
 {
+	int w = getWidth();
+	int h = getHeight();
+	float ratio = getRatio();
+	g.setColour(borderColour);
+	g.drawRect(0.0f, 0.0f, (float)w, (float)h, borderThickness);
+}
+/*{
 	int w = getWidth();
 	int h = getHeight();
 	String tmp;
@@ -139,24 +119,12 @@ void BarChart::paint(Graphics& g)
 
 	}
 
-}
+}*/
 /*
 void BarChart::resized()
 {
 	repaint();
 }*/
-
-void BarChart::setVertical(bool val)
-{
-	isVertical = val;
-	repaint();
-}
-void BarChart::setBorderThickness(float val)
-{
-	float v = jmin(getWidth(), getHeight());
-	borderThickness = jlimit(0.0f, v/2-2.0f, val);  //check and set the thickness
-	repaint();
-}
 
 void BarChart::timerCallback()
 {

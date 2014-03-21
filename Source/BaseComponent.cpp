@@ -54,6 +54,13 @@ void BaseComponent::mouseDown(const MouseEvent& e)
 	//remember X, Y
 	lastX = getX();
 	lastY = getY();
+
+	//property panel
+	if(documentView) 
+	{
+		documentView->getPropertyPanel()->clear();
+		documentView->getPropertyPanel()->addSection("Properties", createPropertyComponents());
+	}
 }
 void BaseComponent::mouseUp(const MouseEvent& e)
 {

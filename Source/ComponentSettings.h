@@ -19,9 +19,9 @@ public:
 	~ComponentSettings();
 	void paint(Graphics& g) override;
 	void resized();
-	 PropertyPanel * getPropertyPanel() {return propertyPanel;}
+	PropertyPanel * getPropertyPanel() {return propertyPanel;}
 private:
- ScopedPointer<PropertyPanel> propertyPanel;
+	ScopedPointer<PropertyPanel> propertyPanel;
 private:
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (ComponentSettings)	

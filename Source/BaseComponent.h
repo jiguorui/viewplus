@@ -16,7 +16,7 @@ class SelectedItems;
 class DocumentView;
 //#include "PropertyPage.h"
 //class PropertyPage;
-class BaseComponent : public Component, public ChangeListener
+class BaseComponent : public Component, public ChangeListener, public Value::Listener
 {
 public:
 	BaseComponent(DocumentView *doc);
@@ -26,9 +26,11 @@ public:
 	void paint (Graphics& g);
 	void resized();
 	void changeListenerCallback(ChangeBroadcaster* /*source*/);
+	void valueChanged(Value &) {repaint();}
 
 	void multiSelectedMove(int dx, int dy);
 	void setSelected(bool sel);
+	virtual Array<PropertyComponent*> createPropertyComponents() {Array<PropertyComponent*> comps; return comps;}
 private:
 	void mouseDown(const MouseEvent& e);
 	void mouseUp(const MouseEvent& e);
@@ -42,6 +44,8 @@ private:
 	ComponentDragger dragger;
 	ScopedPointer<ResizableBorderComponent> resizeBorder;
 	DocumentView * documentView;
+	//Array<PropertyComponent*> propertyComps;
+
 	//==============================================================================
 	JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (BaseComponent)
 };
